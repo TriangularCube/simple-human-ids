@@ -1,0 +1,20 @@
+{
+  "name": "simple-human-ids",
+  "version": "1.0.0",
+  "description": "Generate human-readable ids from lists of easy-to-spell words",
+  "main": "src/index.js",
+  "keywords": [
+    "hri",
+    "human",
+    "readable",
+    "ids",
+    "string",
+    "english"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://git.coolaj86.com/coolaj86/human-readable-ids.js.git"
+  },
+  "author": "Michael Liu",
+  "license": "MIT"
+}
