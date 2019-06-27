@@ -11,7 +11,7 @@ Generate ids in the format of `#-adjective-noun` such as
 * 90-brave-ladybug
 
 I frequently want human readable ids I can type without checking it multiple times. 
-I should be able to yell these ids across the room and have them able to enter it
+I should be able to yell these ids across the room and have people be able to enter it
  without confusion.
 
 Currently the id space is about 1,000,000 ids (100 * 100 * 100).
