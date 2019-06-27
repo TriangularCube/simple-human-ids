@@ -4,7 +4,7 @@
     "description": "Generate human-readable ids from lists of easy-to-spell words",
     "main": "src/index.js",
     "scripts": {
-        "test": "node tests/test.js"
+        "release": ""
     },
     "keywords": [
         "hri",
@@ -22,5 +22,8 @@
     "license": "MIT",
     "dependencies": {
         "shuffle-array": "^1.0.1"
+    },
+    "devDependencies": {
+        "np": "^5.0.3"
     }
 }
