@@ -47,6 +47,23 @@ for ( let i = 0; i < 100; i++ ) {
 ```
 
 
+You are also able to configure your own lists to use
+```javascript
+const id = require( 'simple-human-ids' );
+
+const numbers = [ 3, 5, 9, ... ];
+const adjectives = [ 'soft', 'hard', 'wet', ... ];
+const nouns = [ 'goose', 'chicken', 'ship', ... ];
+
+const lists = id.construct( numbers, adjectives, nouns );
+id.configure( lists );
+
+for( let i = 0; i < 100; i++ ){
+    console.log( id.new() );
+}
+```
+
+
 Acknowledgement
 ===========
 This project was as effort to expand on 

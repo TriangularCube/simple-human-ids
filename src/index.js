@@ -11,20 +11,20 @@ function next(){
 
     // Initialize lists if not already done
     if( !lists ){
-        lists = construct( generateNumbers(), getList( 'animals' ), getList( 'adjectives' ) );
+        lists = construct( generateNumbers(), getList( 'nouns' ), getList( 'adjectives' ) );
     }
 
     // Start a new string
-    return `${shuffle.pick( lists.numbers )}-${shuffle.pick( lists.adjectives)}-${shuffle.pick( lists.animals )}`;
+    return `${shuffle.pick( lists.numbers )}-${shuffle.pick( lists.adjectives)}-${shuffle.pick( lists.nouns )}`;
 
 }
 
-function construct( numbers, animals, adjectives ){
+function construct( numbers, adjectives, nouns ){
 
     let lists = {};
     lists['numbers'] = numbers;
-    lists['animals'] = animals;
     lists['adjectives'] = adjectives;
+    lists['nouns'] = nouns;
 
     return lists;
 
@@ -66,4 +66,4 @@ function getList( subject ){
 
 module.exports.new = next;
 module.exports.configure = configure;
-module.exports.constructLists = construct;
+module.exports.construct = construct;
