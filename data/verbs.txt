@@ -1,12 +1,8 @@
 jump
 fly
-kiss
-throw
-skip
 walk
 eat
 drink
-turn
 sell
 buy
 give
@@ -14,7 +10,9 @@ cook
 clean
 preach
 build
-click
 rest
 sleep
 read
+run
+look
+listen
