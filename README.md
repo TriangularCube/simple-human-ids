@@ -3,18 +3,18 @@ simple-human-ids-js
 
 Use JavaScript to generate human-readable ids from a lists of adjectives, nouns, and verbs.
 
-Generate ids in the format of `#-adjective-noun` such as
+Generate ids in the format of `#-adjective-noun-verb-adverb` such as
 
-* 24-silly-goose
-* 15-quick-cobra
-* 23-tricky-chicken
-* 90-brave-ladybug
+* 24-silly-goose-ran-quickly
+* 15-quick-cobra-sold-randomly
+* 23-tricky-chicken-bought-downstairs
+* 90-brave-ladybug-looked-jumped-everywhere
 
 I frequently want human readable ids I can type without checking it multiple times. 
 I should be able to yell these ids across the room and have people be able to enter it
  without confusion.
 
-Currently the id space is about 1,000,000 ids (100 * 100 * 100).
+Currently the id space is about 200,000,000 ids (100 * 100 * 75 * 18 * 15).
 
 The goal is to increase the word space to at least 1 billion while preserving 
 the philosophy that the id would be human readable and simple to spell.

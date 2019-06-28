@@ -11,23 +11,38 @@ function next(){
 
     // Initialize lists if not already done
     if( !lists ){
-        lists = construct( generateNumbers(), getList( 'nouns' ), getList( 'adjectives' ) );
+        lists = construct();
     }
 
     // Start a new string
-    return `${shuffle.pick( lists.numbers )}-${shuffle.pick( lists.adjectives)}-${shuffle.pick( lists.nouns )}`;
+    return `${shuffle.pick( lists.numbers )}-${shuffle.pick( lists.adjectives )}-${shuffle.pick( lists.nouns )}-${shuffle.pick( lists.verbs )}-${shuffle.pick( lists.adverbs )}`;
 
 }
 
-function construct( numbers, adjectives, nouns ){
+// Construct our lists with defaults
+function construct( numbers = generateNumbers(), adjectives = getList( 'adjectives' ), nouns = getList( 'nouns' ),
+                    verbs = getList( 'verbs' ), adverbs = getList( 'adverbs' ) ){
 
-    let lists = {};
-    lists['numbers'] = numbers;
-    lists['adjectives'] = adjectives;
-    lists['nouns'] = nouns;
+    // Guard against Null
+    const numbersInternal = numbers != null ? numbers.slice(0) : generateNumbers();
+    const adjectivesInternal = guardNull( adjectives, 'adjectives' );
+    const nounsInternal = guardNull( nouns, 'nouns' );
+    const verbsInternal = guardNull( verbs, 'verbs' );
+    const adverbsInternal = guardNull( adverbs, 'adverbs' );
 
-    return lists;
 
+    return {
+        numbers: numbersInternal,
+        adjectives: adjectivesInternal,
+        nouns: nounsInternal,
+        verbs: verbsInternal,
+        adverbs: adverbsInternal
+    }
+
+}
+
+function guardNull( list, name ){
+    return list != null ? list.slice(0) : getList( name );
 }
 
 function generateNumbers(){

@@ -12,12 +12,7 @@ somewhere
 underground
 upstairs
 early
-late
-first
-last
-never
 now
 today
-also
 simply
 well

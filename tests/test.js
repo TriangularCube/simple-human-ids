@@ -1,12 +1,14 @@
 const id = require( '../src/index' );
 
-console.log( id.new() );
+for( let i = 0; i < 100; i++ ){
+    console.log( id.new() );
+}
 
 const numbers = [ 3, 5, 9 ];
 const adjectives = [ 'soft', 'hard', 'wet' ];
 const nouns = [ 'goose', 'chicken', 'ship' ];
 
-const lists = id.construct( numbers, adjectives, nouns );
+const lists = id.construct( numbers, null, nouns );
 id.configure( lists );
 
-id.new();
+console.log( id.new() );
