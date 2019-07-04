@@ -14,10 +14,6 @@
         "string",
         "english"
     ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/TriangularCube/simple-human-ids.git"
-    },
     "author": "Michael Liu",
     "license": "MIT",
     "dependencies": {
