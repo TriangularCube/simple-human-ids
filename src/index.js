@@ -19,16 +19,21 @@ function next(){
 
 }
 
+const defaultAdjectives = require( '../data/adjectives' );
+const defaultAdverbs = require( '../data/adverbs' );
+const defaultNouns = require( '../data/nouns' );
+const defaultVerbs = require( '../data/verbs' );
+
 // Construct our lists with defaults
-function construct( numbers = generateNumbers(), adjectives = getList( 'adjectives' ), nouns = getList( 'nouns' ),
-                    verbs = getList( 'verbs' ), adverbs = getList( 'adverbs' ) ){
+function construct( numbers = generateNumbers(), adjectives = defaultAdjectives, nouns = defaultNouns,
+                    verbs = defaultVerbs, adverbs = defaultAdverbs ){
 
     // Guard against Null
     const numbersInternal = numbers != null ? numbers.slice(0) : generateNumbers();
-    const adjectivesInternal = guardNull( adjectives, 'adjectives' );
-    const nounsInternal = guardNull( nouns, 'nouns' );
-    const verbsInternal = guardNull( verbs, 'verbs' );
-    const adverbsInternal = guardNull( adverbs, 'adverbs' );
+    const adjectivesInternal = adjectives != null ? adjectives.slice(0) : defaultAdjectives.slice(0);
+    const nounsInternal = nouns != null ? nouns.slice(0) : defaultNouns.slice(0);
+    const verbsInternal = verbs != null ? verbs.slice(0) : defaultVerbs.slice(0);
+    const adverbsInternal = adverbs != null ? adverbs.slice(0) : defaultAdverbs.slice(0);
 
 
     return {
@@ -39,10 +44,6 @@ function construct( numbers = generateNumbers(), adjectives = getList( 'adjectiv
         adverbs: adverbsInternal
     }
 
-}
-
-function guardNull( list, name ){
-    return list != null ? list.slice(0) : getList( name );
 }
 
 function generateNumbers(){
@@ -60,24 +61,6 @@ function generateNumbers(){
 
 }
 
-let fs;
-let path;
-function getList( subject ){
-
-    // Import filesystem and path utilities if not already imported
-    if( !fs ){
-        fs = require( 'fs' );
-    }
-    if( !path ){
-        path = require( 'path' );
-    }
-
-    const filePath = path.join( __dirname, '..', 'data', subject + '.txt' );
-    const file = fs.readFileSync( filePath, 'utf8' );
-
-    return file.trim().split( '\n' );
-
-}
 
 module.exports.new = next;
 module.exports.configure = configure;

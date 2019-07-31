@@ -1,0 +1,20 @@
+module.exports = [
+    "slowly",
+    "quickly",
+    "firmly",
+    "lightly",
+    "carefully",
+    "randomly",
+    "everywhere",
+    "downstairs",
+    "inside",
+    "outside",
+    "somewhere",
+    "underground",
+    "upstairs",
+    "early",
+    "now",
+    "today",
+    "simply",
+    "well"
+];
